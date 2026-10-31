@@ -46,9 +46,12 @@ jobs:
           python -m pip install buildozer cython==0.29.36
 
       - name: Build Android APK
-        working-directory: android
-        run: |
-          buildozer android debug
+  working-directory: android
+  run: |
+    set +o pipefail
+    yes | buildozer android debug
+    status=${PIPESTATUS[1]}
+    exit "$status"
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
