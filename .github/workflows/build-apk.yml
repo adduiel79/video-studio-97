@@ -45,13 +45,10 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install buildozer cython==0.29.36
 
-      - name: Build Android APK
-  working-directory: android
-  run: |
-    set +o pipefail
-    yes | buildozer android debug
-    status=${PIPESTATUS[1]}
-    exit "$status"
+            - name: Build Android APK
+        working-directory: android
+        run: |
+          yes | buildozer android debug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
