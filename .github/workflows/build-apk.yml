@@ -12,6 +12,7 @@ permissions:
 jobs:
   build-apk:
     runs-on: ubuntu-22.04
+    timeout-minutes: 60
 
     steps:
       - name: Checkout project
@@ -45,7 +46,7 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install buildozer cython==0.29.36
 
-            - name: Build Android APK
+      - name: Build Android APK
         working-directory: android
         run: |
           yes | buildozer android debug
