@@ -20,9 +20,9 @@ fullscreen = 0
 android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
 android.api = 33
-android.minapi = 23
+android.minapi = 24
+
 android.ndk = 28c
-android.ndk_api = 23
 
 android.archs = arm64-v8a
 
